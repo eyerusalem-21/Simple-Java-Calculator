@@ -16,7 +16,7 @@ import static java.lang.Math.log10;
 import static java.lang.Math.pow;
 
 public class Calculator {
-
+//declaration of variables
     public enum BiOperatorModes {
         normal, add, minus, multiply, divide , xpowerofy 
     }
@@ -24,10 +24,10 @@ public class Calculator {
     public enum MonoOperatorModes {
         square, squareRoot, oneDevidedBy, cos, sin, tan ,log , rate, abs
     }
-
+//assgning object
     private Double num1, num2;
     private BiOperatorModes mode = BiOperatorModes.normal;
-
+//our first method
     private Double calculateBiImpl() {
         if (mode == BiOperatorModes.normal) {
             return num2;
@@ -51,7 +51,7 @@ public class Calculator {
         // never reach
         throw new Error();
     }
-
+//our second method with parameters
     public Double calculateBi(BiOperatorModes newMode, Double num) {
         if (mode == BiOperatorModes.normal) {
             num2 = 0.0;
@@ -65,7 +65,7 @@ public class Calculator {
             return num1;
         }
     }
-
+//third method eith one parameter
     public Double calculateEqual(Double num) {
         return calculateBi(BiOperatorModes.normal, num);
     }
@@ -77,7 +77,7 @@ public class Calculator {
 
         return Double.NaN;
     }
-
+//last method
     public Double calculateMono(MonoOperatorModes newMode, Double num) {
         if (newMode == MonoOperatorModes.square) {
             return num * num;
